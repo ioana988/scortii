@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub - Play Any Game You Want</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎮 GameHub</h1>
+            <p>Play Your Favorite Games</p>
+        </header>
+
+        <!-- Game Menu -->
+        <section class="menu-section" id="menuSection">
+            <h2>Choose a Game</h2>
+            <div class="games-grid">
+                <div class="game-card" onclick="startGame('snake')">
+                    <div class="game-icon">🐍</div>
+                    <h3>Snake</h3>
+                    <p>Classic Snake Game</p>
+                </div>
+                <div class="game-card" onclick="startGame('tictactoe')">
+                    <div class="game-icon">⭕</div>
+                    <h3>Tic Tac Toe</h3>
+                    <p>Beat the AI</p>
+                </div>
+                <div class="game-card" onclick="startGame('2048')">
+                    <div class="game-icon">2️⃣</div>
+                    <h3>2048</h3>
+                    <p>Merge Tiles</p>
+                </div>
+                <div class="game-card" onclick="startGame('memory')">
+                    <div class="game-icon">🧠</div>
+                    <h3>Memory Game</h3>
+                    <p>Match Pairs</p>
+                </div>
+                <div class="game-card" onclick="startGame('rps')">
+                    <div class="game-icon">✂️</div>
+                    <h3>Rock Paper Scissors</h3>
+                    <p>Beat the Computer</p>
+                </div>
+                <div class="game-card" onclick="startGame('flappy')">
+                    <div class="game-icon">🐦</div>
+                    <h3>Flappy Bird</h3>
+                    <p>Navigate Through Pipes</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Container -->
+        <section class="game-section" id="gameSection" style="display: none;">
+            <div class="game-header">
+                <button class="back-btn" onclick="backToMenu()">← Back</button>
+                <h2 id="gameTitle"></h2>
+                <div id="gameStats"></div>
+            </div>
+            <div id="gameContainer"></div>
+        </section>
+    </div>
+
+    <script src="games.js"></script>
+</body>
+</html>

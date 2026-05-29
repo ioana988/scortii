@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 40px;
+}
+
+.menu-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.game-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.6);
+}
+
+.game-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.game-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.game-card p {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* Game Section */
+.game-section {
+    padding: 40px;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 20px;
+}
+
+.game-header h2 {
+    color: #333;
+    font-size: 2em;
+    flex: 1;
+    text-align: center;
+}
+
+#gameStats {
+    color: #667eea;
+    font-weight: bold;
+    min-width: 150px;
+}
+
+.back-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+.back-btn:hover {
+    background: #764ba2;
+}
+
+#gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Snake Game Styles */
+#snakeCanvas {
+    border: 3px solid #667eea;
+    background: #000;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.snake-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.snake-controls button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 1em;
+}
+
+.snake-controls button:hover {
+    background: #764ba2;
+}
+
+/* Tic Tac Toe Styles */
+.ttt-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ttt-board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.ttt-cell {
+    width: 120px;
+    height: 120px;
+    background: #667eea;
+    border: none;
+    border-radius: 10px;
+    font-size: 2.5em;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.ttt-cell:hover {
+    background: #764ba2;
+}
+
+.ttt-status {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 20px;
+    min-height: 30px;
+}
+
+.ttt-reset {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.ttt-reset:hover {
+    background: #764ba2;
+}
+
+/* 2048 Styles */
+.game-2048 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-info {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.score-info div {
+    text-align: center;
+}
+
+.score-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.grid-2048 {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    gap: 10px;
+    background: #bbada0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.tile {
+    width: 80px;
+    height: 80px;
+    background: #cdc1b4;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.tile.tile-2 { background: #eee4da; color: #776e65; }
+.tile.tile-4 { background: #ede0c8; color: #776e65; }
+.tile.tile-8 { background: #f2b179; color: #f9f6f2; }
+.tile.tile-16 { background: #f59563; color: #f9f6f2; }
+.tile.tile-32 { background: #f67c5f; color: #f9f6f2; }
+.tile.tile-64 { background: #f65e3b; color: #f9f6f2; }
+.tile.tile-128 { background: #edcf72; color: #095f6b; font-size: 1.5em; }
+.tile.tile-256 { background: #edcc61; color: #095f6b; font-size: 1.5em; }
+.tile.tile-512 { background: #edc850; color: #095f6b; font-size: 1.5em; }
+.tile.tile-1024 { background: #edc53f; color: #095f6b; font-size: 1.2em; }
+.tile.tile-2048 { background: #edc22e; color: #095f6b; font-size: 1.2em; }
+
+.game-controls {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.game-controls button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 1em;
+}
+
+.game-controls button:hover {
+    background: #764ba2;
+}
+
+/* Memory Game Styles */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.memory-card {
+    width: 100px;
+    height: 100px;
+    background: #667eea;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 2em;
+    transition: all 0.3s;
+    color: transparent;
+}
+
+.memory-card:hover:not(.matched) {
+    background: #764ba2;
+    transform: scale(1.05);
+}
+
+.memory-card.flipped {
+    background: white;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.memory-card.matched {
+    background: #90EE90;
+    cursor: default;
+}
+
+/* Rock Paper Scissors Styles */
+.rps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rps-choices {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.choice-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 20px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 2em;
+    transition: all 0.3s;
+}
+
+.choice-btn:hover {
+    background: #764ba2;
+    transform: scale(1.1);
+}
+
+.rps-result {
+    margin: 20px 0;
+    font-size: 1.3em;
+    color: #333;
+    min-height: 40px;
+}
+
+.rps-scores {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+/* Flappy Bird Styles */
+#flappyCanvas {
+    border: 3px solid #667eea;
+    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.flappy-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.flappy-controls button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 1em;
+}
+
+.flappy-controls button:hover {
+    background: #764ba2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .ttt-board {
+        grid-template-columns: repeat(3, 90px);
+    }
+
+    .ttt-cell {
+        width: 90px;
+        height: 90px;
+        font-size: 2em;
+    }
+
+    .grid-2048 {
+        grid-template-columns: repeat(4, 60px);
+    }
+
+    .tile {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5em;
+    }
+
+    .memory-grid {
+        grid-template-columns: repeat(3, 80px);
+    }
+
+    .memory-card {
+        width: 80px;
+        height: 80px;
+    }
+}
